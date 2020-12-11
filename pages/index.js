@@ -8,7 +8,7 @@ export default function index({ posts }) {
 	return (
 		<div className="w-4/5 mx-auto mt-24">
 			<Head>
-				<title>Landing Page</title>
+				<title>Landing Page Pointer 2020</title>
 			</Head>
 			<div className="grid items-center lg:grid-cols-2 gap-3 lg:gap-0">
 				<div>
