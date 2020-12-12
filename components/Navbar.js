@@ -11,10 +11,10 @@ export default function Navbar() {
 				</Link>
 				<div className="flex space-x-5">
 					<Link href="/">
-						<a className="uppercase font-semibold text-custom">home</a>
+						<a className="uppercase font-semibold text-sm text-custom">home</a>
 					</Link>
 					<Link href="/posts">
-						<a className="uppercase font-semibold text-custom">posts</a>
+						<a className="uppercase font-semibold text-sm text-custom">posts</a>
 					</Link>
 				</div>
 			</div>

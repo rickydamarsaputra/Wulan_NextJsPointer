@@ -8,13 +8,18 @@
     "start": "next start"
   },
   "dependencies": {
+    "@tailwindcss/typography": "^0.3.1",
     "autoprefixer": "^10.1.0",
     "axios": "^0.21.0",
+    "moment": "^2.29.1",
     "next": "10.0.3",
+    "nprogress": "^0.2.0",
     "postcss": "^8.2.1",
     "react": "17.0.1",
     "react-dom": "17.0.1",
     "react-icons": "^4.1.0",
+    "react-markdown": "^5.0.3",
+    "react-player": "^2.7.0",
     "tailwindcss": "^2.0.1"
   }
 }

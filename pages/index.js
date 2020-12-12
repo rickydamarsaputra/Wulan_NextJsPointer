@@ -1,9 +1,15 @@
 import Head from "next/head";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import axios from "axios";
 import { FaCaretRight } from "react-icons/fa";
 
 export default function index({ posts }) {
+	const router = useRouter();
+	const handelRedireactTo = () => {
+		router.push("https://mi.dinamika.ac.id/");
+	};
+
 	return (
 		<div className="w-4/5 mx-auto mt-24">
 			<Head>
@@ -13,7 +19,7 @@ export default function index({ posts }) {
 				<div>
 					<div className="text-2xl lg:text-5xl text-custom font-semibold">Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
 					<div className="text-sm my-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad beatae ut doloremque nisi fuga delectus cum quod! Fugiat, animi cupiditate!</div>
-					<button className="flex items-center text-white bg-custom transition-all duration-300 hover:bg-transparent hover:text-custom border-2 border-custom font-medium focus:outline-none rounded-sm capitalize py-1 px-4">
+					<button onClick={handelRedireactTo} className="flex items-center text-white bg-custom transition-all duration-300 hover:bg-transparent hover:text-custom border-2 border-custom font-medium focus:outline-none rounded-sm capitalize py-1 px-4">
 						see more
 						<FaCaretRight className="text-xl" />
 					</button>
@@ -35,12 +41,16 @@ export default function index({ posts }) {
 					</div>
 				</div>
 			</div>
-			<div className="mb-10">
+			<div>
 				<div className="text-custom text-xl capitalize mb-4">latest post</div>
 				<div className="grid lg:grid-cols-3 gap-5">
 					{posts.map((post) => (
 						<div key={post.id}>
-							<img src={post.thumbnail.url} alt={post.title} className="mb-2 h-40 w-full shadow-lg rounded-sm object-cover cursor-pointer transition-all duration-300 transform hover:-translate-y-2" />
+							<Link href="/posts/[id]" as={`/posts/${post.id}`}>
+								<a>
+									<img src={post.thumbnail.url} alt={post.title} className="mb-2 h-40 w-full shadow-lg rounded-sm object-cover cursor-pointer transition-all duration-300 transform hover:-translate-y-2" />
+								</a>
+							</Link>
 							<Link href="/posts/[id]" as={`/posts/${post.id}`}>
 								<a className="text-sm font-medium capitalize transition-all duration-300 text-gray-500 hover:text-gray-800">{post.title}</a>
 							</Link>
@@ -48,10 +58,20 @@ export default function index({ posts }) {
 					))}
 				</div>
 				<div className="mt-4 flex justify-end">
-					<button className="flex items-center text-white bg-custom transition-all duration-300 hover:bg-transparent hover:text-custom border-2 border-custom font-medium focus:outline-none rounded-sm capitalize py-1 px-4">
-						more post
-						<FaCaretRight className="text-xl" />
-					</button>
+					<Link href="/posts">
+						<a className="flex items-center text-white bg-custom transition-all duration-300 hover:bg-transparent hover:text-custom border-2 border-custom font-medium focus:outline-none rounded-sm capitalize py-1 px-4">
+							more post
+							<FaCaretRight className="text-xl" />
+						</a>
+					</Link>
+				</div>
+			</div>
+			<div className="py-24">
+				<div>
+					<div className="capitalize text-2xl font-medium relative pointer__title__profile mb-2">profile kami</div>
+					<div className="capitalize text-xl">
+						orang orang dibalik <span className="uppercase">d3 si 2020</span>
+					</div>
 				</div>
 			</div>
 		</div>

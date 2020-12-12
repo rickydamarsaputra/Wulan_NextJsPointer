@@ -1,3 +1,26 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.pointer__title__profile::after {
+	content: "";
+	position: absolute;
+	width: 3rem;
+	height: 0.3rem;
+	background-color: #91288f;
+	left: 0;
+	bottom: -5px;
+}
+
+.pointer__video__player {
+	width: auto !important;
+	height: auto !important;
+}
+
+.pointer__video__player video {
+	border-radius: 0.375rem;
+}
+
+.pointer__video__player video:focus {
+	outline: none;
+}
