@@ -4,7 +4,6 @@ import axios from "axios";
 import { FaCaretRight } from "react-icons/fa";
 
 export default function index({ posts }) {
-	console.log(posts);
 	return (
 		<div className="w-4/5 mx-auto mt-24">
 			<Head>
@@ -42,7 +41,7 @@ export default function index({ posts }) {
 					{posts.map((post) => (
 						<div key={post.id}>
 							<img src={post.thumbnail.url} alt={post.title} className="mb-2 h-40 w-full shadow-lg rounded-sm object-cover cursor-pointer transition-all duration-300 transform hover:-translate-y-2" />
-							<Link href="/post/[id]" as={`/post/${post.id}`}>
+							<Link href="/posts/[id]" as={`/posts/${post.id}`}>
 								<a className="text-sm font-medium capitalize transition-all duration-300 text-gray-500 hover:text-gray-800">{post.title}</a>
 							</Link>
 						</div>
@@ -59,7 +58,7 @@ export default function index({ posts }) {
 	);
 }
 
-export async function getStaticProps(context) {
+export async function getStaticProps() {
 	const { API_URL } = process.env;
 	const { data } = await axios.get(`${API_URL}/posts`);
 
