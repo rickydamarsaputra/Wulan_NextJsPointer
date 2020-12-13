@@ -9,6 +9,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 SwiperCore.use([Navigation, Autoplay]);
 
 export default function index({ posts, members }) {
+	console.log(members);
 	const router = useRouter();
 	const handelRedireactTo = () => {
 		router.push("https://mi.dinamika.ac.id/");
