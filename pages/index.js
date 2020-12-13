@@ -3,11 +3,19 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import axios from "axios";
 import { FaCaretRight } from "react-icons/fa";
+import SwiperCore, { Navigation, Autoplay } from "swiper";
+import { Swiper, SwiperSlide } from "swiper/react";
 
-export default function index({ posts }) {
+SwiperCore.use([Navigation, Autoplay]);
+
+export default function index({ posts, members }) {
 	const router = useRouter();
 	const handelRedireactTo = () => {
 		router.push("https://mi.dinamika.ac.id/");
+	};
+
+	const handleClickMember = (member) => {
+		console.log(member);
 	};
 
 	return (
@@ -66,12 +74,22 @@ export default function index({ posts }) {
 					</Link>
 				</div>
 			</div>
-			<div className="py-24">
+			<div className="relative grid lg:grid-cols-2 gap-5 lg:gap-0 items-center justify-between py-24">
 				<div>
 					<div className="capitalize text-2xl font-medium relative pointer__title__profile mb-2">profile kami</div>
 					<div className="capitalize text-xl">
 						orang orang dibalik <span className="uppercase">d3 si 2020</span>
 					</div>
+				</div>
+				<div>
+					<Swiper autoplay spaceBetween={10} slidesPerView={3}>
+						{members.map((member) => (
+							<SwiperSlide key={member.id}>
+								<img onClick={() => handleClickMember(member)} src={member.photo.url} alt={member.photo.name} className="cursor-pointer h-40 w-60 object-cover rounded-md" />
+							</SwiperSlide>
+						))}
+					</Swiper>
+					<img src="/assets/img/people.svg" alt="people" className="absolute hidden lg:block pointer__member__people" />
 				</div>
 			</div>
 		</div>
@@ -80,11 +98,13 @@ export default function index({ posts }) {
 
 export async function getStaticProps() {
 	const { API_URL } = process.env;
-	const { data } = await axios.get(`${API_URL}/posts`);
+	const responsePosts = await axios.get(`${API_URL}/posts`);
+	const responseMembers = await axios.get(`${API_URL}/members`);
 
 	return {
 		props: {
-			posts: data,
+			posts: responsePosts.data,
+			members: responseMembers.data,
 		},
 	};
 }

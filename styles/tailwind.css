@@ -24,3 +24,14 @@
 .pointer__video__player video:focus {
 	outline: none;
 }
+
+.swiper-button-next,
+.swiper-button-prev {
+	color: red !important;
+}
+
+.pointer__member__people {
+	width: 65%;
+	right: 0;
+	bottom: 4rem;
+}
