@@ -1,30 +1,39 @@
 import Head from "next/head";
 import Link from "next/link";
+import { useState } from "react";
 import { useRouter } from "next/router";
 import axios from "axios";
 import { FaCaretRight } from "react-icons/fa";
 import SwiperCore, { Navigation, Autoplay } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 
+import Modal from "../components/Modal";
+
 SwiperCore.use([Navigation, Autoplay]);
 
 export default function index({ posts, members }) {
-	console.log(members);
 	const router = useRouter();
+	const [openModal, setOpenModal] = useState(false);
+	const [member, setMember] = useState(null);
 	const handelRedireactTo = () => {
 		router.push("https://mi.dinamika.ac.id/");
 	};
 
 	const handleClickMember = (member) => {
-		console.log(member);
+		setOpenModal(true);
+		setMember(member);
+	};
+	const closeModal = () => {
+		setOpenModal(false);
 	};
 
 	return (
 		<div className="w-4/5 mx-auto mt-24">
+			{openModal && <Modal member={member} closeModal={closeModal} />}
 			<Head>
-				<title>Landing Page Pointer 2020</title>
+				<title>D3 Sistem Informasi 2020</title>
 			</Head>
-			<div className="grid items-center lg:grid-cols-2 gap-3 lg:gap-0">
+			<div className="grid items-center lg:grid-cols-2 gap-3 lg:gap-0 pb-48">
 				<div>
 					<div className="text-2xl lg:text-5xl text-custom font-semibold">Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
 					<div className="text-sm my-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad beatae ut doloremque nisi fuga delectus cum quod! Fugiat, animi cupiditate!</div>
@@ -37,7 +46,7 @@ export default function index({ posts, members }) {
 					<img src="/assets/img/team_work.svg" alt="team work ilustration" />
 				</div>
 			</div>
-			<div className="grid items-center lg:grid-cols-3 gap-10 py-32">
+			<div className="grid items-center lg:grid-cols-3 gap-10 pb-32">
 				<div className="flex items-center justify-center bg-gray-100 py-32">
 					<img src="/assets/img/d3_logo.svg" alt="undika d3 logo" className="w-32" />
 				</div>
@@ -50,7 +59,7 @@ export default function index({ posts, members }) {
 					</div>
 				</div>
 			</div>
-			<div>
+			<div className="pb-32">
 				<div className="text-custom text-xl capitalize mb-4">latest post</div>
 				<div className="grid lg:grid-cols-3 gap-5">
 					{posts.map((post) => (
@@ -75,14 +84,14 @@ export default function index({ posts, members }) {
 					</Link>
 				</div>
 			</div>
-			<div className="relative grid lg:grid-cols-2 gap-5 lg:gap-0 items-center justify-between py-24">
+			<div className="relative grid lg:grid-cols-2 gap-5 lg:gap-0 items-center justify-between pb-32">
 				<div>
 					<div className="capitalize text-2xl font-medium relative pointer__title__profile mb-2">profile kami</div>
 					<div className="capitalize text-xl">
 						orang orang dibalik <span className="uppercase">d3 si 2020</span>
 					</div>
 				</div>
-				<div className="overflow-x-scroll lg:overflow-x-auto">
+				<div className="overflow-x-hidden">
 					<Swiper autoplay spaceBetween={10} slidesPerView={3}>
 						{members.map((member) => (
 							<SwiperSlide key={member.id}>
@@ -99,7 +108,7 @@ export default function index({ posts, members }) {
 
 export async function getStaticProps() {
 	const { API_URL } = process.env;
-	const responsePosts = await axios.get(`${API_URL}/posts`);
+	const responsePosts = await axios.get(`${API_URL}/posts?_limit=6`);
 	const responseMembers = await axios.get(`${API_URL}/members`);
 
 	return {

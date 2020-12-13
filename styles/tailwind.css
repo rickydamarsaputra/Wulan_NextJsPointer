@@ -36,6 +36,17 @@
 	bottom: 4rem;
 }
 
+.pointer__modal__box {
+	width: 80vw;
+	height: 40vw;
+}
+
+@media (max-width: 575.98px) {
+	.pointer__modal__box {
+		height: 95vw;
+	}
+}
+
 /* Make clicks pass-through */
 #nprogress {
 	pointer-events: none;
