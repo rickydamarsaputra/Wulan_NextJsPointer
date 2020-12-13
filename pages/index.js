@@ -81,7 +81,7 @@ export default function index({ posts, members }) {
 						orang orang dibalik <span className="uppercase">d3 si 2020</span>
 					</div>
 				</div>
-				<div>
+				<div className="overflow-x-scroll">
 					<Swiper autoplay spaceBetween={10} slidesPerView={3}>
 						{members.map((member) => (
 							<SwiperSlide key={member.id}>

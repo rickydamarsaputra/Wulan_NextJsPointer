@@ -9,7 +9,7 @@ import "swiper/components/scrollbar/scrollbar.scss";
 import Navbar from "../components/Navbar";
 import Router from "next/router";
 import NProgress from "nprogress";
-import "nprogress/nprogress.css";
+// import "nprogress/nprogress.css";
 
 //Binding events.
 Router.events.on("routeChangeStart", () => NProgress.start());
