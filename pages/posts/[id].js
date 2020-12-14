@@ -12,7 +12,7 @@ export default function postDetail({ post }) {
 	return (
 		<div className="w-4/5 mx-auto">
 			<Head>
-				<title>{post.title}</title>
+				<title>D3 Sistem Informasi 2020 | {post.title}</title>
 			</Head>
 			<div className="mb-4">
 				<div className="font-sans capitalize text-center mb-5">
