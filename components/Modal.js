@@ -14,8 +14,8 @@ export default function Modal({ member, closeModal }) {
 						<ReactMarkdown>{member.description}</ReactMarkdown>
 					</article>
 				</div>
-				<button onClick={closeModal} className="focus:outline-none absolute -right-3 -top-3 flex items-center justify-center bg-red-600 w-8 h-8 rounded-full text-white">
-					<FaCross />
+				<button onClick={closeModal} className="focus:outline-none absolute -right-3 -top-3 flex items-center justify-center bg-red-600 w-8 h-8 rounded-full text-white font-medium">
+					X
 				</button>
 			</div>
 		</div>
