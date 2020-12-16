@@ -35,6 +35,5 @@ export async function getServerSideProps({ params }) {
 		props: {
 			post: data,
 		},
-		revalidate: 1,
 	};
 }
