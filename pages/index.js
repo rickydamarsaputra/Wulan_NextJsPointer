@@ -35,8 +35,8 @@ export default function index({ posts, members }) {
 			</Head>
 			<div className="grid items-center lg:grid-cols-2 gap-3 lg:gap-0 pb-48">
 				<div>
-					<div className="text-2xl lg:text-5xl text-custom font-semibold">Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
-					<div className="text-sm my-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad beatae ut doloremque nisi fuga delectus cum quod! Fugiat, animi cupiditate!</div>
+					<div className="text-2xl lg:text-5xl text-custom font-semibold">DIII Sistem Informasi Universitas Dinamika Surabaya</div>
+					<div className="text-sm my-5">Sebuah Prodi yang berkembang dalam bidang Teknologi dan Infromasi untuk mewujudkan keinginan mahasiswa yang ingin meraih kualitas dalam memahami Ilmu Teknologi dan Informasi, juga Ilmu yang lebih tinggi.</div>
 					<button onClick={handelRedireactTo} className="flex items-center text-white bg-custom transition-all duration-300 hover:bg-transparent hover:text-custom border-2 border-custom font-medium focus:outline-none rounded-sm capitalize py-1 px-4">
 						see more
 						<FaCaretRight className="text-xl" />
@@ -51,12 +51,9 @@ export default function index({ posts, members }) {
 					<img src="/assets/img/d3_logo.svg" alt="undika d3 logo" className="w-32" />
 				</div>
 				<div className="lg:col-span-2">
-					<div className="text-2xl">Lorem, ipsum.</div>
-					<div className="text-custom text-2xl mb-3">Lorem, ipsum dolor.</div>
-					<div className="text-sm font-medium">
-						"Lorem ipsum dolor sit amet, consectetur adipisicing elit. At aut officiis rerum. Odit saepe eius consequatur provident, harum quos pariatur reprehenderit magni fuga nihil dolor voluptatum nobis assumenda veritatis, at quam quisquam impedit adipisci iste aliquid beatae veniam accusamus
-						aspernatur. Voluptatibus, explicabo numquam tenetur quos hic nostrum provident veritatis doloremque."
-					</div>
+					<div className="text-2xl">Selamat datang di.</div>
+					<div className="text-custom text-2xl mb-3">DIII Sistem Informasi</div>
+					<div className="text-sm font-medium">“Sebuah prodi yang mengutamakan keahlian dalam bidang Teknologi dan Informasi yang menuntut mahasiswa berfikir kritis dan inovatif dalam mengahadapi perkembangan Teknologi.”</div>
 				</div>
 			</div>
 			<div className="pb-32">
@@ -84,22 +81,20 @@ export default function index({ posts, members }) {
 					</Link>
 				</div>
 			</div>
-			<div className="relative grid lg:grid-cols-2 gap-5 lg:gap-0 items-center justify-between pb-32">
-				<div>
-					<div className="capitalize text-2xl font-medium relative pointer__title__profile mb-2">profile kami</div>
+			<div className="grid lg:grid-cols-2 gap-5 lg:gap-0 items-center justify-between pb-32">
+				<div>{/* <div className="capitalize text-2xl font-medium relative pointer__title__profile mb-2">profile kami</div>
 					<div className="capitalize text-xl">
 						orang orang dibalik <span className="uppercase">d3 si 2020</span>
-					</div>
-				</div>
-				<div className="overflow-x-hidden">
-					<Swiper autoplay spaceBetween={10} slidesPerView={3}>
+					</div> */}</div>
+				<div>
+					{/* <Swiper autoplay spaceBetween={10} slidesPerView={3}>
 						{members.map((member) => (
 							<SwiperSlide key={member.id}>
 								<img onClick={() => handleClickMember(member)} src={member.photo.url} alt={member.photo.name} className="cursor-pointer h-40 w-60 object-cover rounded-md" />
 							</SwiperSlide>
 						))}
-					</Swiper>
-					<img src="/assets/img/people.svg" alt="people" className="absolute hidden lg:block pointer__member__people" />
+					</Swiper> */}
+					<img src="/assets/img/people.svg" alt="people" />
 				</div>
 			</div>
 		</div>
