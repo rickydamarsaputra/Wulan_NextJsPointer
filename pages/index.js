@@ -108,5 +108,6 @@ export async function getStaticProps() {
 			posts: responsePosts.data,
 			members: responseMembers.data,
 		},
+		revalidate: 1,
 	};
 }
