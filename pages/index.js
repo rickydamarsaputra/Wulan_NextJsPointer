@@ -82,10 +82,7 @@ export default function index({ posts, members }) {
 				</div>
 			</div>
 			<div className="grid lg:grid-cols-2 gap-5 lg:gap-0 items-center justify-between pb-32">
-				<div>{/* <div className="capitalize text-2xl font-medium relative pointer__title__profile mb-2">profile kami</div>
-					<div className="capitalize text-xl">
-						orang orang dibalik <span className="uppercase">d3 si 2020</span>
-					</div> */}</div>
+				<div></div>
 				<div>
 					{/* <Swiper autoplay spaceBetween={10} slidesPerView={3}>
 						{members.map((member) => (
