@@ -8,7 +8,6 @@ import ReactPlayer from "react-player/file";
 
 export default function postDetail({ post }) {
 	const isVideo = post.media.provider_metadata.resource_type != "video" ? false : true;
-	console.log(post.media);
 	return (
 		<div className="w-4/5 mx-auto">
 			<Head>
@@ -19,7 +18,7 @@ export default function postDetail({ post }) {
 					<div className="text-4xl font-medium mb-2">{post.title}</div>
 					<div className="text-sm text-gray-500">published on {moment(post.createdAt).format("D MMMM y")}</div>
 				</div>
-				{isVideo ? <ReactPlayer url={post.media.url} controls={true} className="pointer__video__player shadow-md" /> : <img src={post.media.url} alt={post.media.name} className="rounded-md shadow-md" />}
+				{isVideo ? <ReactPlayer url={post.media.url} controls={true} className="pointer__video__player shadow-md" /> : <img src={post.media.url} alt={post.media.name} className="rounded-md shadow-md w-full object-cover" />}
 			</div>
 			<article className="prose max-w-none mb-24">
 				<ReactMarkdown>{post.content}</ReactMarkdown>

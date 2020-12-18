@@ -34,7 +34,7 @@ export default function index({ posts, members }) {
 				<title>D3 Sistem Informasi 2020</title>
 			</Head>
 			<div className="grid items-center lg:grid-cols-2 gap-3 lg:gap-0 pb-48">
-				<div>
+				<div data-aos="fade-right">
 					<div className="text-2xl lg:text-5xl text-custom font-semibold">DIII Sistem Informasi Universitas Dinamika Surabaya</div>
 					<div className="text-sm my-5">Sebuah Prodi yang berkembang dalam bidang Teknologi dan Infromasi untuk mewujudkan keinginan mahasiswa yang ingin meraih kualitas dalam memahami Ilmu Teknologi dan Informasi, juga Ilmu yang lebih tinggi.</div>
 					<button onClick={handelRedireactTo} className="flex items-center text-white bg-custom transition-all duration-300 hover:bg-transparent hover:text-custom border-2 border-custom font-medium focus:outline-none rounded-sm capitalize py-1 px-4">
@@ -42,15 +42,15 @@ export default function index({ posts, members }) {
 						<FaCaretRight className="text-xl" />
 					</button>
 				</div>
-				<div className="order-first lg:order-none">
+				<div className="order-first lg:order-none" data-aos="fade-left">
 					<img src="/assets/img/team_work.svg" alt="team work ilustration" />
 				</div>
 			</div>
 			<div className="grid items-center lg:grid-cols-3 gap-10 pb-32">
-				<div className="flex items-center justify-center bg-gray-100 py-32">
+				<div className="flex items-center justify-center bg-gray-100 py-32" data-aos="fade-right">
 					<img src="/assets/img/d3_logo.svg" alt="undika d3 logo" className="w-32" />
 				</div>
-				<div className="lg:col-span-2">
+				<div className="lg:col-span-2" data-aos="fade-left">
 					<div className="text-2xl">Selamat datang di.</div>
 					<div className="text-custom text-2xl mb-3">DIII Sistem Informasi</div>
 					<div className="text-sm font-medium">“Sebuah prodi yang mengutamakan keahlian dalam bidang Teknologi dan Informasi yang menuntut mahasiswa berfikir kritis dan inovatif dalam mengahadapi perkembangan Teknologi.”</div>
@@ -59,8 +59,8 @@ export default function index({ posts, members }) {
 			<div className="pb-32">
 				<div className="text-custom text-xl capitalize mb-4">latest post</div>
 				<div className="grid lg:grid-cols-3 gap-5">
-					{posts.map((post) => (
-						<div key={post.id}>
+					{posts.map((post, index) => (
+						<div key={post.id} data-aos="fade-down" data-aos-duration={index * 250}>
 							<Link href="/posts/[id]" as={`/posts/${post.id}`}>
 								<a>
 									<img src={post.thumbnail.url} alt={post.title} className="mb-2 h-40 w-full shadow-lg rounded-sm object-cover cursor-pointer transition-all duration-300 transform hover:-translate-y-2" />
@@ -84,14 +84,7 @@ export default function index({ posts, members }) {
 			<div className="grid lg:grid-cols-2 gap-5 lg:gap-0 items-center justify-between pb-32">
 				<div></div>
 				<div>
-					{/* <Swiper autoplay spaceBetween={10} slidesPerView={3}>
-						{members.map((member) => (
-							<SwiperSlide key={member.id}>
-								<img onClick={() => handleClickMember(member)} src={member.photo.url} alt={member.photo.name} className="cursor-pointer h-40 w-60 object-cover rounded-md" />
-							</SwiperSlide>
-						))}
-					</Swiper> */}
-					<img src="/assets/img/people.svg" alt="people" />
+					<img src="/assets/img/people.svg" alt="people" data-aos="fade-left" />
 				</div>
 			</div>
 		</div>

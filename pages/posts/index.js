@@ -6,7 +6,7 @@ import Head from "next/head";
 
 export default function posts({ posts }) {
 	return (
-		<div className="w-4/5 mx-auto mt-10">
+		<div className="w-4/5 mx-auto py-20">
 			<Head>
 				<title>D3 Sistem Informasi 2020 | Posts</title>
 			</Head>

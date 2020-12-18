@@ -10,6 +10,9 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import Router from "next/router";
 import NProgress from "nprogress";
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 // import "nprogress/nprogress.css";
 
 //Binding events.
@@ -18,6 +21,12 @@ Router.events.on("routeChangeComplete", () => NProgress.done());
 Router.events.on("routeChangeError", () => NProgress.done());
 
 function MyApp({ Component, pageProps }) {
+	useEffect(() => {
+		AOS.init({
+			offset: 50,
+		});
+	}, []);
+
 	return (
 		<div>
 			<Navbar />
