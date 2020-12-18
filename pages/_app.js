@@ -7,6 +7,7 @@ import "swiper/components/pagination/pagination.scss";
 import "swiper/components/scrollbar/scrollbar.scss";
 
 import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 import Router from "next/router";
 import NProgress from "nprogress";
 // import "nprogress/nprogress.css";
@@ -21,6 +22,7 @@ function MyApp({ Component, pageProps }) {
 		<div>
 			<Navbar />
 			<Component {...pageProps} />
+			<Footer />
 		</div>
 	);
 }
