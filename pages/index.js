@@ -93,7 +93,7 @@ export default function index({ posts, members }) {
 
 export async function getStaticProps() {
 	const { API_URL } = process.env;
-	const responsePosts = await axios.get(`${API_URL}/posts?_limit=6`);
+	const responsePosts = await axios.get(`${API_URL}/posts?_sort=createdAt:DESC&_limit=6`);
 	const responseMembers = await axios.get(`${API_URL}/members`);
 
 	return {

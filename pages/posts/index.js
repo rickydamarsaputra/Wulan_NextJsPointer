@@ -29,7 +29,7 @@ export default function posts({ posts }) {
 
 export async function getStaticProps() {
 	const { API_URL } = process.env;
-	const { data } = await axios.get(`${API_URL}/posts`);
+	const { data } = await axios.get(`${API_URL}/posts?_sort=createdAt:DESC`);
 
 	return {
 		props: {

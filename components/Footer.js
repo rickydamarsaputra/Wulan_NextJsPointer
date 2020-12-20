@@ -4,7 +4,7 @@ import { FaHeart } from "react-icons/fa";
 
 export default function Footer() {
 	return (
-		<div className="bg-gray-100 py-5">
+		<div className="py-5">
 			<div className="w-4/5 mx-auto flex items-center justify-between">
 				<div className="flex items-center space-x-2">
 					<div className="text-sm font-medium capitalize">&copy; {moment().format("y")} d3 sistem informasi 2020 create with</div>
