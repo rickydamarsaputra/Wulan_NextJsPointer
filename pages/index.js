@@ -53,7 +53,7 @@ export default function index({ posts, members }) {
 				<div className="lg:col-span-2" data-aos="fade-left">
 					<div className="text-2xl">Selamat datang di.</div>
 					<div className="text-custom text-2xl mb-3">DIII Sistem Informasi</div>
-					<div className="text-sm font-medium">“Sebuah prodi yang mengutamakan keahlian dalam bidang Teknologi dan Informasi yang menuntut mahasiswa berfikir kritis dan inovatif dalam mengahadapi perkembangan Teknologi.”</div>
+					<div className="text-sm font-medium">“Sebuah prodi yang mengutamakan keahlian dalam bidang Teknologi dan Informasi yang menuntut mahasiswa berfikir kritis dan inovatif dalam menghadapi perkembangan Teknologi.”</div>
 				</div>
 			</div>
 			<div className="pb-32">
